@@ -11,4 +11,3 @@ public class TiendaApplication {
 	}
 
 }
-https://github.com/TeresaPMolina/tienda.git
