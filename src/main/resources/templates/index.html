@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<!-- mi primera pagina html dinamica-->
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+    <head th:replace="~{layot/plantitilla :: head}">  
+        <title>TechShop</title>
+        <meta charset="UTF-8"/>    
+    </head>
+    <body>
+        <header th:replace="~{layot/plantitilla :: header}">             
+        </header>
+        <h1>Esta es una pagina dinamica</h1>
+        
+        
+        <footer th:replace="~{layot/plantitilla :: footer}">
+        </footer> 
+    </body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!-- mi primera pagina html dinamica-->
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+    <head th:fragment="head">
+        <title>TechShop</title>
+        <meta charset="UTF-8"/>
+        <link th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" rel="stylesheet"/>
+        <link th:href="@{/webjars/font-awesome/css/all.css}" rel="stylesheet"/>
+        <script th:scr="@{/webjars/jquery/jquery.min.js}"></script>
+        <script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
+        <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+    </head>
+    <body>
+        <header th:fragmet="header" class="header">
+            <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+                <div class="container">
+                    <a class="navbar-brand"
+                       th:href="@{/}">[[#{aplicacion.titulo}]]</a>
+                    <button class="navbar-toggler"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#navbarCollapse">
+                        
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div id="navbarCollapse"
+                         class="collapse navbar-collapse jutify-content-between">
+                        <ul class="navbar-nav">
+                            <li class="nav-item px-2"><a class="nav-link" th:href="@{/categoria/listado}">[[#{plantilla.categorias}]]</a></li>
+                            <li class="nav-item px-2"><a class="nav-link" th:href="@{/producto/listado}">[[#{plantilla.productos}]]</a></li>    
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown"
+                                   data-bs-toggle="dropdown"
+                                   href="#"
+                                   role="button
+                                   aria-expanded="faslse">[[#{plantilla.extras}]]</a>
+                                <ul class="dropdown-menu dropdown-dark">
+                                    <li><a class="dropdown-item"th:href="@{/pruebaslistado}"> [[#{plantilla.asocianciones}]]</a></li>
+                                    <li><a class="dropdown-item" th:href="@{/pruebas/listado2}">[[#{plantilla.consultas}]]</a></li>
+                                    <li><a class="dropdown-item" th:href="@{/reportes/principal}">[[#{plantilla.reportes}]]</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <footer th:fragmet="footer" class="p-2 mt-5 bg-info tex-white">
+            <p class="tex-center lead">&COPY; [[#{plantilla.derechos}]]</p>
+        </footer> 
+    </body>
+</html>
